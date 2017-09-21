@@ -56,7 +56,9 @@ public class PlayGamesManager : MonoBehaviour
 
     public void SignOut()
     {
+#if UNITY_ANDROID
         ((PlayGamesPlatform)Social.Active).SignOut();
+#endif
     }
 
 
@@ -68,7 +70,9 @@ public class PlayGamesManager : MonoBehaviour
 
     public static void IncrementAchievement(string id, int stepsToIncrement)
     {
+#if UNITY_ANDROID
         PlayGamesPlatform.Instance.IncrementAchievement(id, stepsToIncrement, success => { });
+#endif
     }
 
     public static void ShowAchievements()

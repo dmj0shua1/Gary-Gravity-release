@@ -314,25 +314,7 @@ namespace GooglePlayGames.Editor
                 Debug.Log("GameInfo.cs does not exist.  Run Window > Google Play Games > Setup > Android Setup...");
                 return false;
             }
-            #elif (UNITY_IPHONE && !NO_GPGS)
-            doneSetup = GPGSProjectSettings.Instance.GetBool(IOSSETUPDONEKEY, false);
-            // check gameinfo
-            if (File.Exists(GameInfoPath))
-            {
-                string contents = ReadFile(GameInfoPath);
-                if (contents.Contains(IOSCLIENTIDPLACEHOLDER))
-                {
-                    Debug.Log("GameInfo not initialized with Client Id.  " +
-                        "Run Window > Google Play Games > Setup > iOS Setup...");
-                    return false;
-                }
-            }
-            else
-            {
-                Debug.Log("GameInfo.cs does not exist.  Run Window > Google Play Games > Setup > iOS Setup...");
-                return false;
-            }
-
+          
             #endif
 
             return doneSetup;
