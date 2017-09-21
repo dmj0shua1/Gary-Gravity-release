@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 6bdda2135d29fb44fa5626bc3e6103e8
+timeCreated: 1502250492
+licenseType: Pro
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Facebook Letter Faces
+  fontNames:
+  - Facebook Letter Faces
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 3
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

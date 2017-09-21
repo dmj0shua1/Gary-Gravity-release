@@ -1,0 +1,189 @@
+fileFormatVersion: 2
+guid: a40c9cd26b5fc9c41a9cff2d80ca30cd
+timeCreated: 1500866021
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: bone
+    100002: Cube
+    100004: Cube_001
+    100006: Cube_003
+    100008: head
+    100010: head_001
+    100012: Icosphere
+    100014: LegL
+    100016: LegL_002
+    100018: neck
+    100020: shoulder
+    100022: shoulder1L
+    100024: shoulder1L_002
+    100026: shoulder2L
+    100028: shoulder2L_002
+    100030: shoulder_002
+    100032: spine
+    100034: //RootNode
+    400000: bone
+    400002: Cube
+    400004: Cube_001
+    400006: Cube_003
+    400008: head
+    400010: head_001
+    400012: Icosphere
+    400014: LegL
+    400016: LegL_002
+    400018: neck
+    400020: shoulder
+    400022: shoulder1L
+    400024: shoulder1L_002
+    400026: shoulder2L
+    400028: shoulder2L_002
+    400030: shoulder_002
+    400032: spine
+    400034: //RootNode
+    4300000: Cube_001
+    4300002: Cube_003
+    4300004: Icosphere
+    4300006: Cube
+    7400000: Default Take
+    7400002: vulture_flyAnim
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cube
+    13700002: Cube_001
+    13700004: Cube_003
+    13700006: Icosphere
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: vulture_flyAnim
+      takeName: vulture_flyAnim
+      firstFrame: -1
+      lastFrame: 22
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bone
+        weight: 1
+      - path: bone/spine
+        weight: 1
+      - path: bone/spine/LegL
+        weight: 1
+      - path: bone/spine/LegL_002
+        weight: 1
+      - path: bone/spine/neck
+        weight: 1
+      - path: bone/spine/neck/head
+        weight: 1
+      - path: bone/spine/neck/head/head_001
+        weight: 1
+      - path: bone/spine/neck/shoulder
+        weight: 1
+      - path: bone/spine/neck/shoulder/shoulder1L
+        weight: 1
+      - path: bone/spine/neck/shoulder/shoulder1L/shoulder2L
+        weight: 1
+      - path: bone/spine/neck/shoulder_002
+        weight: 1
+      - path: bone/spine/neck/shoulder_002/shoulder1L_002
+        weight: 1
+      - path: bone/spine/neck/shoulder_002/shoulder1L_002/shoulder2L_002
+        weight: 1
+      - path: Cube
+        weight: 1
+      - path: Cube_001
+        weight: 1
+      - path: Cube_003
+        weight: 1
+      - path: Icosphere
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
