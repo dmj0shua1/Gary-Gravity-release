@@ -8,13 +8,16 @@ using UnityEngine.UI;
 
 public class PlayGamesManager : MonoBehaviour
 {
-
+    
     // Use this for initialization
     void Start()
     {
 #if UNITY_ANDROID
         PlayGamesPlatform.DebugLogEnabled = true;
-        PlayGamesPlatform.Activate();
+        PlayGamesPlatform.Activate();    
+#elif UNITY_IPHONE
+        Social.localUser.Authenticate(ProcessAuthentication);
+        Debug.Log("Authentication Executed");
 #endif
         if (SceneManager.GetActiveScene().name == "splash")
         {
@@ -31,6 +34,34 @@ public class PlayGamesManager : MonoBehaviour
 
     }
 
+    void ProcessAuthentication (bool success){
+        if (success)
+        {
+            Debug.Log("Authenticated, checking achievements");
+
+            // Request loaded achievements, and register a callback for processing them
+            Social.LoadAchievements(ProcessLoadedAchievements);
+        }
+        else
+            Debug.Log("Failed to authenticate");
+    }
+
+    void ProcessLoadedAchievements(IAchievement[] achievements)
+    {
+         if (achievements.Length == 0)
+        Debug.Log ("Error: no achievements found");
+    else
+        Debug.Log ("Got " + achievements.Length + " achievements");
+ 
+    // You can also call into the functions like this
+    Social.ReportProgress ("Achievement01", 100.0, (bool result) => {
+        if (result)
+            Debug.Log ("Successfully reported achievement progress");
+        else
+            Debug.Log ("Failed to report achievement");
+    });
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -39,18 +70,21 @@ public class PlayGamesManager : MonoBehaviour
 
     void SignIn()
     {
-
+#if UNITY_ANDROID
         Social.localUser.Authenticate((bool success) =>
         {
             if (success)
             {
                 Debug.Log("SignIn Success");
+                
             }
             else
             {
                 Debug.Log("SignIn failed");
             }
         });
+
+#endif
 
     }
 
@@ -60,7 +94,6 @@ public class PlayGamesManager : MonoBehaviour
         ((PlayGamesPlatform)Social.Active).SignOut();
 #endif
     }
-
 
     #region Achievements
     public static void UnlockAchievement(string id)
@@ -78,6 +111,7 @@ public class PlayGamesManager : MonoBehaviour
     public static void ShowAchievements()
     {
         Social.ShowAchievementsUI();
+        Debug.Log("ShowAchievements UI executed");
     }
 
     public static void LoadAchievements()
