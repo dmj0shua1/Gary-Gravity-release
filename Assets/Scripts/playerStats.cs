@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SocialPlatforms;
 
 public class playerStats : MonoBehaviour
 {
@@ -120,6 +121,8 @@ public class playerStats : MonoBehaviour
                 txtNextUpgrade.text = "Next upgrade -> " + (baseUpgradePercentage * (PlayerPrefs.GetInt(skillName + "Lvl") + 1)).ToString() + "%";
                 if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
+                GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAQ",100f,true);
+        
             }
 
         }

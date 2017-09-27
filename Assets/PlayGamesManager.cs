@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms;
+using UnityEngine.SocialPlatforms.GameCenter;
 using UnityEngine.UI;
 
 public class PlayGamesManager : MonoBehaviour
@@ -16,6 +17,7 @@ public class PlayGamesManager : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();    
 #elif UNITY_IPHONE
+        GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
         Social.localUser.Authenticate(ProcessAuthentication);
         Debug.Log("Authentication Executed");
 #endif
