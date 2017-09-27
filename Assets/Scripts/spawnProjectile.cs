@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
 
 public class spawnProjectile : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class spawnProjectile : MonoBehaviour
         if (achBlindsight == 3)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDQ");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDQ", 100f, true);
         }
            
         if (achPowerTripperAttack < 1)

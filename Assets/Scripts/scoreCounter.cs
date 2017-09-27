@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SocialPlatforms;
 
 public class scoreCounter : MonoBehaviour
 {
@@ -47,9 +48,20 @@ public class scoreCounter : MonoBehaviour
             count = count + 1;
 
             //achievements
-            if (count == 50) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
-            if (count == 100 && LavidaLoca) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
-            if (count == 150) PlayGamesManager.IncrementAchievement("CgkI1OXD-eYaEAIQDw", 5);
+            if (count == 50)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
+                GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAw", 100f, true);
+            }
+            if (count == 100 && LavidaLoca)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
+                GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQBQ", 100f, true);
+            }
+            if (count == 150)
+            {
+                PlayGamesManager.IncrementAchievement("CgkI1OXD-eYaEAIQDw", 5);
+            }
 
             setCountText();
 

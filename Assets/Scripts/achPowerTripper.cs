@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class achPowerTripper : MonoBehaviour {
 
@@ -21,6 +22,7 @@ public class achPowerTripper : MonoBehaviour {
         if (achPowerTrip == 3)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEw");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEw", 100f, true);
         }
     }
 }

@@ -119,7 +119,11 @@ public class playerStats : MonoBehaviour
                 upgradedView.SetActive(true);
                 txtUpgrade.text = "cooldown speed upgraded by " + (baseUpgradePercentage * PlayerPrefs.GetInt(skillName + "Lvl")).ToString() + "%";
                 txtNextUpgrade.text = "Next upgrade -> " + (baseUpgradePercentage * (PlayerPrefs.GetInt(skillName + "Lvl") + 1)).ToString() + "%";
-                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
+                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5)
+                {
+                    PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
+                    GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDg", 100f, true);
+                }
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAQ",100f,true);
         

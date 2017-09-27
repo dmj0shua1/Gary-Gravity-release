@@ -2,35 +2,39 @@
 using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
-public class objectdestroyer : MonoBehaviour {
+using UnityEngine.SocialPlatforms;
+public class objectdestroyer : MonoBehaviour
+{
 
-	// Use this for initialization
-    public GameObject explosion,btnShieldObj;
+    // Use this for initialization
+    public GameObject explosion, btnShieldObj;
     public Boolean isDestroyer = false;
     shieldToggle shieldToggleScript;
     cooldownShield cdShieldScript;
-    int achDemolitionDerby = 0,achTv = 0;
+    int achDemolitionDerby = 0, achTv = 0;
     spawnProjectile spawnProjectileScript;
-	void Start () {
+    void Start()
+    {
         cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
         spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void OnTriggerEnter(Collider obj)
     {
 
-    
+
         if (isDestroyer && (obj.tag == "Foreground" || obj.tag == "Obstacles"))
         {
             Destroy(obj.gameObject);
         }
-        else if(obj.tag == "Obstacles")
+        else if (obj.tag == "Obstacles")
         {
             if (gameObject.name == "playerShield")
             {
@@ -38,7 +42,8 @@ public class objectdestroyer : MonoBehaviour {
                 { Instantiate(explosion, transform.position, transform.rotation); }
                 catch (Exception e) { }
                 btnShieldObj = GameObject.Find("btnShield");
-                /*if (SceneManager.GetActiveScene().name == "Game") */shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
+                /*if (SceneManager.GetActiveScene().name == "Game") */
+                shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
                 shieldToggleScript.deactivateShield();
                 Destroy(obj.gameObject);
                 GameObject objSfxDestByShield = GameObject.Find("sfxDestroyedByShield");
@@ -66,7 +71,7 @@ public class objectdestroyer : MonoBehaviour {
                 GameObject objSfxDestByAttack = GameObject.Find("sfxDestroyedByAttack");
                 AudioSource asSfxDestByAttack = objSfxDestByAttack.GetComponent<AudioSource>();
                 asSfxDestByAttack.Play();
-              
+
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 
                 Invoke("destroyExp", 0.5f);
@@ -74,9 +79,9 @@ public class objectdestroyer : MonoBehaviour {
                 Destroy(obj.gameObject);
 
                 //achievement
-                
 
-                if (spawnProjectileScript.achBlindsight >=1 ) spawnProjectileScript.achBlindsight--;
+
+                if (spawnProjectileScript.achBlindsight >= 1) spawnProjectileScript.achBlindsight--;
 
                 if (obj.gameObject.name == "Tv(Clone)")
                 {
@@ -87,6 +92,7 @@ public class objectdestroyer : MonoBehaviour {
                     else if (achTv >= 4)
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+                        GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
                     }
                 }
 
@@ -97,10 +103,11 @@ public class objectdestroyer : MonoBehaviour {
                 else if (achDemolitionDerby >= 2)
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
+                    GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCg", 100f, true);
                 }
             }
-          
-           
+
+
         }
     }
 
@@ -109,5 +116,5 @@ public class objectdestroyer : MonoBehaviour {
         Destroy(explosion);
     }
 
-    
+
 }

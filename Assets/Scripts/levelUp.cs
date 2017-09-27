@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SocialPlatforms;
 
 public class levelUp : MonoBehaviour {
 
@@ -95,7 +96,11 @@ public class levelUp : MonoBehaviour {
             PlayerPrefs.SetInt("skillPoints", PlayerPrefs.GetInt("skillPoints") + 1);
 
             //achievement
-            if (PlayerPrefs.GetInt("playerLevel") >= 15) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEQ");
+            if (PlayerPrefs.GetInt("playerLevel") >= 15)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEQ");
+                GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEQ",100f,true);
+            }
 
             txtlvlup.text = "LVL " + PlayerPrefs.GetInt("playerLevel").ToString() + "!";
             lvlUpAnim.SetBool("leveledUp", true);

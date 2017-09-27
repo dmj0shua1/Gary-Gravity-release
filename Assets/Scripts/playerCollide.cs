@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SocialPlatforms;
 
 public class playerCollide : MonoBehaviour
 {
@@ -167,6 +168,7 @@ public class playerCollide : MonoBehaviour
             if (healthbarSlider.value == 1)
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCQ");
+                GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCQ", 100f, true);
             }
 
             swipeScript.swipeCap = Convert.ToInt32(healthbarSlider.maxValue);
@@ -252,6 +254,7 @@ public class playerCollide : MonoBehaviour
         if (swipeScript.swipeCap < 1)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCw");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCw", 100f, true);
         }
 
     }

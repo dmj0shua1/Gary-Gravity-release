@@ -2,6 +2,7 @@
 using System.Collections;
 using System;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
 public class BuyItem : MonoBehaviour {
     public string itemName;
     public int itemPrice,playerGold;
@@ -35,6 +36,7 @@ public class BuyItem : MonoBehaviour {
         if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
             print("born ready!");
         }
 	}
