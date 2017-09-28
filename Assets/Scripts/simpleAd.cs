@@ -33,11 +33,13 @@ public class simpleAd : MonoBehaviour {
         if (PlayerPrefs.GetInt("adsCounter") <= 3 )
         {
             PlayerPrefs.SetInt("adsCounter",PlayerPrefs.GetInt("adsCounter") + 1);
+            Debug.Log("Adcounter increased");
         }
         else
         {
             PlayerPrefs.SetInt("adsCounter", 0);
             Invoke("showAdInvoked", 1.0f);
+            Debug.Log("Adcounter reset and ad shown");
         }
     }
 
