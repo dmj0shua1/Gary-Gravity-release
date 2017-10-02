@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 11
+  serializedVersion: 12
   productGUID: 1e3a10d2cd5816b408a591c77e1d86f6
   AndroidProfiler: 0
   defaultScreenOrientation: 0
@@ -15,7 +15,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
-  m_ShowUnitySplashScreen: 0
+  m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 0
@@ -70,6 +70,7 @@ PlayerSettings:
   captureSingleScreen: 0
   muteOtherAudioSources: 1
   Prepare IOS For Recording: 0
+  Force IOS Speakers When Recording: 0
   submitAnalytics: 1
   usePlayerLog: 1
   bakeCollisionMeshes: 0
@@ -101,6 +102,7 @@ PlayerSettings:
   xboxOneResolution: 0
   xboxOneMonoLoggingLevel: 0
   xboxOneLoggingLevel: 1
+  xboxOneDisableEsram: 0
   videoMemoryForVertexBuffers: 0
   psp2PowerMode: 0
   psp2AcquireBGM: 1
@@ -120,28 +122,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0.6
-  preloadedAssets:
-  - {fileID: 167520, guid: 06944d16c623dfd46b729e354251bd47, type: 2}
-  - {fileID: 183960, guid: 51416b5f4e2c5474b8c6d9bbcf32f4b2, type: 2}
-  - {fileID: 1620316131985724, guid: 782f124a73c39924abfd12ff0924c53d, type: 2}
-  - {fileID: 119716, guid: 465400b07772431479161db92fdc8767, type: 2}
-  - {fileID: 127026, guid: 892c6675650cbb746b3bdd2ab816499e, type: 2}
-  - {fileID: 134134, guid: 3e0ede1dd1c1b1c4597595f9d00e64a0, type: 2}
-  - {fileID: 1918247859666128, guid: f5ac469c758567f4b9e8058cff2cf056, type: 2}
-  - {fileID: 114294, guid: ab1a27182c7e31543aa0a36e6d4d7070, type: 2}
-  - {fileID: 1000014154746126, guid: 10a456b858c2c2f4588f1995045039b6, type: 2}
-  - {fileID: 1000011096528190, guid: a9795ddfab43afd42aa7026fdccae550, type: 2}
-  - {fileID: 1000011092787434, guid: 37596fa32a1406646b88ec0c65236411, type: 2}
-  - {fileID: 1000010951587400, guid: 247bb92a31ac52746937446b81f350af, type: 2}
-  - {fileID: 1000011698747290, guid: b5ffa35f4e8e9674492d51c45fe33383, type: 2}
-  - {fileID: 1000010564480142, guid: 4707f751edd629049b9d59929a6a2b32, type: 2}
-  - {fileID: 1000013308032098, guid: 7ed3ca9fcd838ee4292ac4ad4b0394d9, type: 2}
-  - {fileID: 1000013578296730, guid: a024a07fda55a4c4c878513fa813d881, type: 2}
-  - {fileID: 1000011922831550, guid: 45373570bab29aa4c960233b5f8a7336, type: 2}
-  - {fileID: 1000011234489776, guid: 0311862d7e8edd74e8d655ffbedff61e, type: 2}
-  - {fileID: 1000010973358354, guid: c4897a389b6762c4cbca04ad40ba28cf, type: 2}
-  - {fileID: 1000012621233078, guid: aa93b7468fdddba4cb04e8663828bc30, type: 2}
-  - {fileID: 1000013578296730, guid: a024a07fda55a4c4c878513fa813d881, type: 2}
+  preloadedAssets: []
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
@@ -157,6 +138,8 @@ PlayerSettings:
       depthFormat: 1
   protectGraphicsMemory: 0
   useHDRDisplay: 0
+  targetPixelDensity: 0
+  resolutionScalingMode: 0
   applicationIdentifier:
     Android: com.loopbook.garyg
     Standalone: unity.Loopbook Inc..Gary Gravity
@@ -164,7 +147,7 @@ PlayerSettings:
     iOS: com.loopbook.garyg
     tvOS: com.loopbook.garyg
   buildNumber:
-    iOS: 9
+    iOS: 18
   AndroidBundleVersionCode: 18
   AndroidMinSdkVersion: 19
   AndroidTargetSdkVersion: 0
@@ -183,12 +166,12 @@ PlayerSettings:
     serializedVersion: 2
     m_Bits: 238
   iPhoneSdkVersion: 988
-  iOSTargetOSVersionString: 8.0
+  iOSTargetOSVersionString: 9.0
   tvOSSdkVersion: 0
   tvOSRequireExtendedGameController: 0
   tvOSTargetOSVersionString: 9.0
   uIPrerenderedIcon: 0
-  uIRequiresPersistentWiFi: 1
+  uIRequiresPersistentWiFi: 0
   uIRequiresFullScreen: 1
   uIStatusBarHidden: 1
   uIExitOnSuspend: 0
@@ -231,7 +214,7 @@ PlayerSettings:
   iOSMetalForceHardShadows: 0
   metalEditorSupport: 1
   metalAPIValidation: 1
-  iOSRenderExtraFrameOnPause: 1
+  iOSRenderExtraFrameOnPause: 0
   appleDeveloperTeamID: 
   iOSManualSigningProvisioningProfileID: 
   tvOSManualSigningProvisioningProfileID: 
@@ -267,7 +250,7 @@ PlayerSettings:
     m_Automatic: 0
   - m_BuildTarget: iOSSupport
     m_APIs: 10000000
-    m_Automatic: 0
+    m_Automatic: 1
   m_BuildTargetVRSettings:
   - m_BuildTarget: Android
     m_Enabled: 0
@@ -349,7 +332,7 @@ PlayerSettings:
   actionOnDotNetUnhandledException: 1
   enableInternalProfiler: 0
   logObjCUncaughtExceptions: 1
-  enableCrashReportAPI: 0
+  enableCrashReportAPI: 1
   cameraUsageDescription: This app requires access to the camera
   locationUsageDescription: This app requires access to the location
   microphoneUsageDescription: This app requires access to the microphone
@@ -460,6 +443,9 @@ PlayerSettings:
   switchUdpSendBufferSize: 9
   switchUdpReceiveBufferSize: 42
   switchSocketBufferEfficiency: 4
+  switchSocketInitializeEnabled: 1
+  switchNetworkInterfaceManagerInitializeEnabled: 1
+  switchPlayerConnectionEnabled: 1
   ps4NPAgeRating: 12
   ps4NPTitleSecret: 
   ps4NPTrophyPackPath: 
@@ -497,7 +483,6 @@ PlayerSettings:
   ps4GarlicHeapSize: 2048
   ps4ProGarlicHeapSize: 2560
   ps4Passcode: eaoEiIgxIX4a2dREbbSqWy6yhKIDCdJO
-  ps4UseDebugIl2cppLibs: 0
   ps4pnSessions: 1
   ps4pnPresence: 1
   ps4pnFriends: 1
@@ -572,7 +557,7 @@ PlayerSettings:
   psp2UseLibLocation: 0
   psp2InfoBarOnStartup: 0
   psp2InfoBarColor: 0
-  psp2UseDebugIl2cppLibs: 0
+  psp2ScriptOptimizationLevel: 0
   psmSplashimage: {fileID: 0}
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
@@ -598,13 +583,14 @@ PlayerSettings:
     17: MOBILE_INPUT
     20: MOBILE_INPUT
   platformArchitecture:
-    iOS: 2
+    iOS: 0
   scriptingBackend:
     Android: 0
     Standalone: 0
     iOS: 1
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
+  scriptingRuntimeVersion: 0
   apiCompatibilityLevelPerPlatform:
     iOS: 2
   m_RenderingPath: 1
@@ -689,7 +675,7 @@ PlayerSettings:
   cloudServicesEnabled:
     Analytics: 0
     Build: 0
-    Collab: 0
+    Collab: 1
     ErrorHub: 0
     Game_Performance: 0
     Hub: 0
@@ -702,4 +688,5 @@ PlayerSettings:
   projectName: Gary Gravity
   organizationId: loopbookinc
   cloudEnabled: 0
-  enableNewInputSystem: 0
+  enableNativePlatformBackendsForNewInputSystem: 0
+  disableOldInputManagerSupport: 0
