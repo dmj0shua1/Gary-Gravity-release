@@ -163,7 +163,6 @@ namespace UnityEngine.Purchasing
 			private static IAPButtonStoreManager instance = new IAPButtonStoreManager();
 			private ProductCatalog catalog;
 			private List<IAPButton> activeButtons = new List<IAPButton>();
-            private IAPListener m_Listener;
 
 			protected IStoreController controller;
 			protected IExtensionProvider extensions;
@@ -212,7 +211,7 @@ namespace UnityEngine.Purchasing
 
 			public Product GetProduct(string productID)
 			{
-				if (controller != null && controller.products != null && !string.IsNullOrEmpty(productID)) {
+				if (controller != null) {
 					return controller.products.WithID(productID);
 				}
 				return null;
@@ -228,29 +227,10 @@ namespace UnityEngine.Purchasing
 				activeButtons.Remove(button);
 			}
 
-            public void AddListener(IAPListener listener)
-            {
-                if (m_Listener != null)
-                    Debug.LogWarning("There is more than one active IAPListener. Only the most recent IAPListener will receive purchase events.");
-                m_Listener = listener;
-            }
-
-            public void RemoveListener(IAPListener listener)
-            {
-                if (m_Listener == listener)
-                    m_Listener = null;
-            }
-
 			public void InitiatePurchase(string productID)
 			{
 				if (controller == null) {
 					Debug.LogError("Purchase failed because Purchasing was not initialized correctly");
-
-					foreach (var button in activeButtons) {
-						if (button.productId == productID) {
-							button.OnPurchaseFailed(null, Purchasing.PurchaseFailureReason.PurchasingUnavailable);
-						}
-					}
 					return;
 				}
 
@@ -279,13 +259,8 @@ namespace UnityEngine.Purchasing
 						return button.ProcessPurchase(e);
 					}
 				}
-
-                if (m_Listener != null) {
-                    return m_Listener.ProcessPurchase(e);
-                } else {
-				    Debug.LogWarning("Purchase not correctly processed for product \"" + e.purchasedProduct.definition.id + "\". Add an active IAPButton to process this purchase, or add an IAPListener to receive any unhandled purchase events.");
-				    return PurchaseProcessingResult.Pending;
-                }
+				Debug.LogWarning("Purchase not correctly processed for product \"" + e.purchasedProduct.definition.id + "\". Add an active IAPButton to process this purchase.");
+				return PurchaseProcessingResult.Complete;
 			}
 
 			public void OnPurchaseFailed (Product product, PurchaseFailureReason reason)
@@ -296,13 +271,7 @@ namespace UnityEngine.Purchasing
 						return;
 					}
 				}
-
-                if (m_Listener != null) {
-                    m_Listener.OnPurchaseFailed(product, reason);
-                    return;
-                } else {
-				    Debug.LogWarning("Failed purchase not correctly handled for product \"" + product.definition.id + "\". Add an active IAPButton to handle this failure, or add an IAPListener to receive any unhandled purchase failures.");
-                }
+				Debug.LogWarning("Failed purchase not correctly handled for product \"" + product.definition.id + "\". Add an active IAPButton to handle this failure.");
 			}
 		}
 	}
