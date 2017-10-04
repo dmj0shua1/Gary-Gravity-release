@@ -31,3 +31,4 @@ sysinfo.txt
 *.unitypackage
 ProjectSettings/GooglePlayGameSettings.txt
 Assets/images/UI/Thumbs.db.meta
+Assets/Plugins/GKAchievementReporter.meta
