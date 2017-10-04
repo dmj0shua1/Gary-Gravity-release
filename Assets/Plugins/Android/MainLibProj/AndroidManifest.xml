@@ -19,6 +19,8 @@
             android:value="\ 920988480212" />
         <meta-data android:name="com.google.android.gms.games.unityVersion"
             android:value="\ 0.9.40" />
+
+
         <activity android:name="com.google.games.bridge.NativeBridgeActivity"
             android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen" />
     </application>

@@ -239,7 +239,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Loopbook/Documents/GG builds/Gary_Gravity_v1/Assets/loopbookinc.keystore
+  AndroidKeystoreName: C:/Users/Loopbook/Documents/Gary-Gravity-release/loopbookinc.keystore
   AndroidKeyaliasName: gg
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
