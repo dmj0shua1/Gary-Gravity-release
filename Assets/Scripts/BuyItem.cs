@@ -36,10 +36,16 @@ public class BuyItem : MonoBehaviour {
         if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
-            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
-            print("born ready!");
-        }
-	}
+        GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
+            Social.ReportProgress("CgkI1OXDeYaEAIQFA", 100, (bool result) =>
+            {
+                
+                print("born ready!");
+
+            });
+    }
+    }
+        
 
     public void buyItem()
     {

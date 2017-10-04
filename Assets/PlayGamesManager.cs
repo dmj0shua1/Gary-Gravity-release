@@ -13,20 +13,21 @@ public class PlayGamesManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-#if UNITY_ANDROID
-        PlayGamesPlatform.DebugLogEnabled = true;
-        PlayGamesPlatform.Activate();    
-#elif UNITY_IPHONE
-        GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
-        Social.localUser.Authenticate(ProcessAuthentication);
-        Debug.Log("Authentication Executed");
-#endif
+
         if (SceneManager.GetActiveScene().name == "splash")
         {
             PlayerPrefs.SetInt("askedForGPG", 0);
         }
         else if (SceneManager.GetActiveScene().name == "Menu")
         {
+#if UNITY_ANDROID
+        PlayGamesPlatform.DebugLogEnabled = true;
+        PlayGamesPlatform.Activate();    
+#elif UNITY_IPHONE
+            GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
+            Social.localUser.Authenticate(ProcessAuthentication);
+            Debug.Log("Authentication Executed");
+#endif
             if (PlayerPrefs.GetInt("askedForGPG") == 0)
             {
                 SignIn();
