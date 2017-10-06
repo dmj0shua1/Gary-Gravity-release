@@ -125,7 +125,7 @@ public class playerStats : MonoBehaviour
         }
         else
         {
-            insufficient.Play();
+            if (PlayerPrefs.GetInt("Sfx") == 1) insufficient.Play();
         }
 
 

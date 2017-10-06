@@ -50,7 +50,7 @@ public class BuyItem : MonoBehaviour {
                 //play audio
                 GameObject objSfxPurchasing = GameObject.Find("sfxPurchasing");
                 AudioSource asSfxPuchasing = objSfxPurchasing.GetComponent<AudioSource>();
-                asSfxPuchasing.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) asSfxPuchasing.Play();
 
                 buyNotif.SetActive(true);
 
@@ -109,7 +109,7 @@ public class BuyItem : MonoBehaviour {
                 //play audio
                 GameObject objSfxInsufficientGold = GameObject.Find("sfxInsufficientGold");
                 AudioSource asSfxInsufficientGold = objSfxInsufficientGold.GetComponent<AudioSource>();
-                asSfxInsufficientGold.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) asSfxInsufficientGold.Play();
             }
         
        

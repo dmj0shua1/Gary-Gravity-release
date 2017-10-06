@@ -43,7 +43,7 @@ public class objectdestroyer : MonoBehaviour {
                 Destroy(obj.gameObject);
                 GameObject objSfxDestByShield = GameObject.Find("sfxDestroyedByShield");
                 AudioSource asSfxDestByShield = objSfxDestByShield.GetComponent<AudioSource>();
-                asSfxDestByShield.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) asSfxDestByShield.Play();
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 BoxCollider colPlayer = player.GetComponent<BoxCollider>();
                 cdShieldScript.regenShield();
@@ -65,7 +65,7 @@ public class objectdestroyer : MonoBehaviour {
             {
                 GameObject objSfxDestByAttack = GameObject.Find("sfxDestroyedByAttack");
                 AudioSource asSfxDestByAttack = objSfxDestByAttack.GetComponent<AudioSource>();
-                asSfxDestByAttack.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) asSfxDestByAttack.Play();
               
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 

@@ -46,7 +46,7 @@ public class chooseStage : MonoBehaviour {
             changeSceneScript.GoTo = goTo;
             mainMenu.SetActive(true);
             stagesBackBtn.SetActive(false);
-            btnSfxPush.Play();
+            if (PlayerPrefs.GetInt("Sfx") == 1)  btnSfxPush.Play();
             boolChangerScript.changeBoolean();
 
         }
@@ -58,7 +58,7 @@ public class chooseStage : MonoBehaviour {
                 //buy it
                 PlayerPrefs.SetInt("PlayerGold", PlayerPrefs.GetInt("PlayerGold") - itmPrice);
                 PlayerPrefs.SetInt("stage" + goTo + "_unlocked",1);
-                purchase.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1)  purchase.Play();
                 coin.SetActive(false);
                 price.SetActive(false);
                 imgPlay.SetActive(true);
@@ -68,7 +68,7 @@ public class chooseStage : MonoBehaviour {
             else
             {
                 //insufficient gold
-                insufficient.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) insufficient.Play();
             }
         }
 

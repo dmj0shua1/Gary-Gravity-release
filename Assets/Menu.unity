@@ -3307,6 +3307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 651}
   - component: {fileID: 946}
+  - component: {fileID: 2004}
   m_Layer: 0
   m_Name: sfxBtnPush
   m_TagString: Untagged
@@ -3792,6 +3793,7 @@ GameObject:
   - component: {fileID: 1997}
   - component: {fileID: 947}
   - component: {fileID: 1996}
+  - component: {fileID: 2272}
   m_Layer: 5
   m_Name: Play
   m_TagString: Untagged
@@ -3861,7 +3863,6 @@ GameObject:
   - component: {fileID: 1214}
   - component: {fileID: 2003}
   - component: {fileID: 2002}
-  - component: {fileID: 2004}
   - component: {fileID: 2005}
   m_Layer: 5
   m_Name: NoAds
@@ -5598,6 +5599,7 @@ GameObject:
   - component: {fileID: 2137}
   - component: {fileID: 2138}
   - component: {fileID: 2141}
+  - component: {fileID: 2267}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7244,6 +7246,7 @@ GameObject:
   - component: {fileID: 1304}
   - component: {fileID: 2191}
   - component: {fileID: 2190}
+  - component: {fileID: 2270}
   m_Layer: 5
   m_Name: btnNext
   m_TagString: Untagged
@@ -8366,6 +8369,7 @@ GameObject:
   - component: {fileID: 1316}
   - component: {fileID: 2216}
   - component: {fileID: 2215}
+  - component: {fileID: 2271}
   m_Layer: 5
   m_Name: btnNext
   m_TagString: Untagged
@@ -8482,6 +8486,7 @@ GameObject:
   - component: {fileID: 1317}
   - component: {fileID: 2218}
   - component: {fileID: 2217}
+  - component: {fileID: 2269}
   m_Layer: 5
   m_Name: btnNext
   m_TagString: Untagged
@@ -10217,6 +10222,7 @@ GameObject:
   - component: {fileID: 1336}
   - component: {fileID: 2260}
   - component: {fileID: 2259}
+  - component: {fileID: 2268}
   m_Layer: 5
   m_Name: btnNext
   m_TagString: Untagged
@@ -24860,7 +24866,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 964.00006, y: 0}
+  m_AnchoredPosition: {x: 963.9999, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1422
@@ -26572,7 +26578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67023, y: 0.42200002}
   m_AnchorMax: {x: 0.8245402, y: 0.638}
-  m_AnchoredPosition: {x: -0.1000061, y: 254.00003}
+  m_AnchoredPosition: {x: -0.1000061, y: 254.00006}
   m_SizeDelta: {x: -0.19999981, y: 0.9000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1511
@@ -27309,7 +27315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 951.9999, y: 11.999992}
+  m_AnchoredPosition: {x: 952.00006, y: 11.999992}
   m_SizeDelta: {x: 0, y: -891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1549
@@ -28497,7 +28503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.615, y: 0.34020296}
   m_AnchorMax: {x: 0.8652499, y: 0.42200002}
-  m_AnchoredPosition: {x: -514.42334, y: 389.9498}
+  m_AnchoredPosition: {x: -514.42334, y: 389.94983}
   m_SizeDelta: {x: 176.66492, y: 34.25223}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1611
@@ -28879,7 +28885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.11725, y: 0.34928507}
   m_AnchorMax: {x: 0.36877012, y: 0.42200002}
-  m_AnchoredPosition: {x: -859.80383, y: 389.4957}
+  m_AnchoredPosition: {x: -859.80383, y: 389.49573}
   m_SizeDelta: {x: 177.55412, y: 35.160458}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1631
@@ -29665,8 +29671,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -29794,8 +29800,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -30774,8 +30780,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35844,8 +35850,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37889,8 +37895,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39554,8 +39560,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 947}
-        m_MethodName: Play
+      - m_Target: {fileID: 2272}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39774,7 +39780,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 220}
+  m_GameObject: {fileID: 189}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
@@ -39809,8 +39815,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40272,8 +40278,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -41762,8 +41768,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42833,8 +42839,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43302,8 +43308,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43447,8 +43453,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44166,7 +44172,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1770}
         m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
@@ -44177,8 +44183,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44418,8 +44424,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44659,8 +44665,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44774,7 +44780,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123}
+      - m_Target: {fileID: 1770}
         m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
@@ -44785,8 +44791,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45044,8 +45050,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2123}
-        m_MethodName: NextScreen
+      - m_Target: {fileID: 1770}
+        m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45055,8 +45061,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45647,8 +45653,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45748,8 +45754,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: NextScreen
+      - m_Target: {fileID: 1770}
+        m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45759,8 +45765,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45838,8 +45844,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842}
-        m_MethodName: NextScreen
+      - m_Target: {fileID: 1770}
+        m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -45849,8 +45855,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46143,7 +46149,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1842}
+      - m_Target: {fileID: 1770}
         m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
@@ -46154,8 +46160,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46349,8 +46355,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -46483,8 +46489,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47104,7 +47110,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1770}
-        m_MethodName: NextScreen
+        m_MethodName: PreviousScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47114,8 +47120,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -47306,6 +47312,83 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasInternet: 0
+--- !u!114 &2267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945473592681d694abf3655501e47f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 295}
+  loop: {fileID: 64}
+  toggledOff: {fileID: 21300000, guid: da2a7eecead9461448d8101a43daf8c3, type: 3}
+  toggledOn: {fileID: 21300000, guid: 7cc3459a8449a2149bff82801e35544a, type: 3}
+  btnMusic: {fileID: 417590290}
+  btnSfx: {fileID: 1699168236}
+--- !u!114 &2268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objSoundSource: {fileID: 0}
+--- !u!114 &2269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objSoundSource: {fileID: 0}
+--- !u!114 &2270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objSoundSource: {fileID: 0}
+--- !u!114 &2271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objSoundSource: {fileID: 0}
+--- !u!114 &2272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objSoundSource: {fileID: 216}
 --- !u!1 &98375712
 GameObject:
   m_ObjectHideFlags: 0
@@ -47426,7 +47509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.67023, y: 0.42200002}
   m_AnchorMax: {x: 0.8245402, y: 0.638}
-  m_AnchoredPosition: {x: -400.58002, y: 254}
+  m_AnchoredPosition: {x: -400.58, y: 254}
   m_SizeDelta: {x: -0.19999695, y: 0.90000916}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &393801951
@@ -47562,6 +47645,7 @@ GameObject:
   - component: {fileID: 417590294}
   - component: {fileID: 417590293}
   - component: {fileID: 417590292}
+  - component: {fileID: 417590295}
   m_Layer: 5
   m_Name: btnMusic
   m_TagString: Untagged
@@ -47575,7 +47659,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417590290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -47584,8 +47668,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: 83.021}
-  m_SizeDelta: {x: 80, y: 63}
+  m_AnchoredPosition: {x: -168, y: 104.54}
+  m_SizeDelta: {x: 143.3, y: 112.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417590292
 MonoBehaviour:
@@ -47604,7 +47688,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -47614,7 +47698,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 34d3cefa6241687428954ebbf33c1c11, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -47625,7 +47709,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 417590293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 417590295}
+        m_MethodName: musictoggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &417590293
@@ -47647,9 +47742,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 7cc3459a8449a2149bff82801e35544a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -47661,6 +47756,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 417590290}
+--- !u!114 &417590295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 417590290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945473592681d694abf3655501e47f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 295}
+  loop: {fileID: 64}
+  toggledOff: {fileID: 21300000, guid: da2a7eecead9461448d8101a43daf8c3, type: 3}
+  toggledOn: {fileID: 21300000, guid: 7cc3459a8449a2149bff82801e35544a, type: 3}
+  btnMusic: {fileID: 417590290}
+  btnSfx: {fileID: 1699168236}
 --- !u!1 &698962073
 GameObject:
   m_ObjectHideFlags: 0
@@ -47693,8 +47805,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.101464555, y: 0.28053516}
   m_AnchorMax: {x: 0.8966904, y: 0.9065229}
-  m_AnchoredPosition: {x: 113, y: 45}
-  m_SizeDelta: {x: -146, y: -140}
+  m_AnchoredPosition: {x: 80.3, y: 59.597}
+  m_SizeDelta: {x: -244, y: -227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &698962075
 MonoBehaviour:
@@ -47717,11 +47829,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: dcea4a4b9754f2a4e81492face6f9c71, type: 3}
-    m_FontSize: 50
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 50
+    m_MaxSize: 72
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -47752,7 +47864,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4453213173346104, guid: 43c308fa003749f4ea2de5136f3d15c1, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -159.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4453213173346104, guid: 43c308fa003749f4ea2de5136f3d15c1, type: 2}
       propertyPath: m_LocalRotation.x
@@ -47772,7 +47884,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4453213173346104, guid: 43c308fa003749f4ea2de5136f3d15c1, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114498233590324462, guid: 43c308fa003749f4ea2de5136f3d15c1,
         type: 2}
@@ -47823,6 +47935,10 @@ Prefab:
         type: 2}
       propertyPath: m_HDR
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453213173346104, guid: 43c308fa003749f4ea2de5136f3d15c1, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -47947,6 +48063,7 @@ GameObject:
   - component: {fileID: 1699168240}
   - component: {fileID: 1699168239}
   - component: {fileID: 1699168238}
+  - component: {fileID: 1699168241}
   m_Layer: 5
   m_Name: btnSfx
   m_TagString: Untagged
@@ -47969,8 +48086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -148, y: 0}
-  m_SizeDelta: {x: 80, y: 63}
+  m_AnchoredPosition: {x: -168, y: 0}
+  m_SizeDelta: {x: 143.3, y: 112.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699168238
 MonoBehaviour:
@@ -47989,7 +48106,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -47999,7 +48116,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: 34d3cefa6241687428954ebbf33c1c11, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -48010,7 +48127,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1699168239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1699168241}
+        m_MethodName: sfxtoggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1699168239
@@ -48032,9 +48160,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 7cc3459a8449a2149bff82801e35544a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -48046,6 +48174,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699168236}
+--- !u!114 &1699168241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1699168236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 945473592681d694abf3655501e47f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 295}
+  loop: {fileID: 64}
+  toggledOff: {fileID: 21300000, guid: da2a7eecead9461448d8101a43daf8c3, type: 3}
+  toggledOn: {fileID: 21300000, guid: 7cc3459a8449a2149bff82801e35544a, type: 3}
+  btnMusic: {fileID: 417590290}
+  btnSfx: {fileID: 1699168236}
 --- !u!1 &1720955379
 GameObject:
   m_ObjectHideFlags: 0
@@ -48083,8 +48228,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12488888, y: 0.33}
   m_AnchorMax: {x: 0.8748334, y: 0.5835313}
-  m_AnchoredPosition: {x: 0.000030517578, y: -39}
-  m_SizeDelta: {x: 2, y: 82}
+  m_AnchoredPosition: {x: 0, y: -14}
+  m_SizeDelta: {x: 79, y: 156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720955381
 MonoBehaviour:
@@ -48153,7 +48298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.31546456, y: 0.17500001}
   m_AnchorMax: {x: 0.68438077, y: 0.3998135}
-  m_AnchoredPosition: {x: 0.25, y: -21.063}
+  m_AnchoredPosition: {x: -0.25, y: -19}
   m_SizeDelta: {x: 0.5, y: -3.6729507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1925796810
@@ -48206,8 +48351,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 946}
-        m_MethodName: Play
+      - m_Target: {fileID: 2004}
+        m_MethodName: playSfx
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -48295,7 +48440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.102000006, y: 0.21627273}
   m_AnchorMax: {x: 0.9622581, y: 0.8857273}
-  m_AnchoredPosition: {x: -0.40000153, y: -0.20000076}
+  m_AnchoredPosition: {x: -0.0000076293945, y: -5.3221}
   m_SizeDelta: {x: 0, y: -0.70000076}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976414753
@@ -48318,12 +48463,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 856f4c51b2f7cdd4b96955a72d0e7e5e, type: 3}
-    m_FontSize: 23
+    m_Font: {fileID: 12800000, guid: dcea4a4b9754f2a4e81492face6f9c71, type: 3}
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 9
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -48369,8 +48514,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.101464555, y: 0.28053516}
   m_AnchorMax: {x: 0.8966904, y: 0.9065229}
-  m_AnchoredPosition: {x: 113, y: -42}
-  m_SizeDelta: {x: -146, y: -135.18}
+  m_AnchoredPosition: {x: 107.8, y: -44.943}
+  m_SizeDelta: {x: -189, y: -218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977360962
 MonoBehaviour:
@@ -48393,11 +48538,11 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: dcea4a4b9754f2a4e81492face6f9c71, type: 3}
-    m_FontSize: 50
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 50
+    m_MinSize: 7
+    m_MaxSize: 70
     m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
