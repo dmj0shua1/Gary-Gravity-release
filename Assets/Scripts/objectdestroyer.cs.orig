@@ -70,8 +70,13 @@ public class objectdestroyer : MonoBehaviour
             {
                 GameObject objSfxDestByAttack = GameObject.Find("sfxDestroyedByAttack");
                 AudioSource asSfxDestByAttack = objSfxDestByAttack.GetComponent<AudioSource>();
+<<<<<<< HEAD
+                asSfxDestByAttack.Play();
+
+=======
                 if (PlayerPrefs.GetInt("Sfx") == 1) asSfxDestByAttack.Play();
               
+>>>>>>> 81afea3... Sound options complete
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 
                 Invoke("destroyExp", 0.5f);

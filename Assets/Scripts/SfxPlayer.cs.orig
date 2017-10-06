@@ -17,7 +17,11 @@ public class SfxPlayer : MonoBehaviour {
     public void playSfx()
     {
         asSfx = objSoundSource.GetComponent<AudioSource>();
+<<<<<<< HEAD
+        asSfx.Play();
+=======
          asSfx.Play();
         }
+>>>>>>> 81afea3... Sound options complete
     }
 }

@@ -222,7 +222,7 @@ public class cooldownBoost : MonoBehaviour
         foreach (GameObject ob in obs)
         {
             Destroy(ob);
-            sfxExplosion.Play();
+            if (PlayerPrefs.GetInt("Sfx") == 1) sfxExplosion.Play();
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         }
 

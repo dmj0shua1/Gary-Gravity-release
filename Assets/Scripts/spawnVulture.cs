@@ -56,7 +56,7 @@ public class spawnVulture : MonoBehaviour {
                 wayPoint = wayPoints[waypointIndex].gameObject;
             }
 
-            sfxVulture.Play();
+            if (PlayerPrefs.GetInt("Sfx") == 1) sfxVulture.Play();
             //blink visual here
             Invoke("instantiateVulture", 1.8f);
         }

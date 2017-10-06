@@ -150,7 +150,7 @@ public class FBManager : MonoBehaviour
                 txtStatus.text = "You received 10 coins for sharing!";
                 PlayerPrefs.SetInt("PlayerGold", PlayerPrefs.GetInt("PlayerGold") + 10);
                 PlayerPrefs.SetInt("shareCoinClaimed", 1);
-                sfxCoins.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) sfxCoins.Play();
             }
             else
             {
@@ -184,7 +184,7 @@ public class FBManager : MonoBehaviour
                 txtStatus.text = "You received 10 coins for inviting!";
                 PlayerPrefs.SetInt("PlayerGold", PlayerPrefs.GetInt("PlayerGold") + 10);
                 PlayerPrefs.SetInt("inviteCoinClaimed", 1);
-                sfxCoins.Play();
+                if (PlayerPrefs.GetInt("Sfx") == 1) sfxCoins.Play();
             }
             else
             {
