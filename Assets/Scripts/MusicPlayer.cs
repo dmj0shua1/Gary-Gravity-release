@@ -23,6 +23,7 @@ public class MusicPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        if (PlayerPrefs.GetInt("Music") == 1) { 
        introMusic = intro.GetComponent<AudioSource>();
        loopMusic = loop.GetComponent<AudioSource>();
         if (!loopMusic.isPlaying)
@@ -31,7 +32,7 @@ public class MusicPlayer : MonoBehaviour {
             loopMusic.PlayDelayed(12);
          
         }
-
+        }
 	}
 	
 	// Update is called once per frame
