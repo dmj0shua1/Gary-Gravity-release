@@ -19,6 +19,7 @@ public class scoreCounter : MonoBehaviour
 
     RdmObjGen rdmObjScript;
     GameObject objRdmobj;
+    coinReward coinRewardScript;
     // Use this for initialization
     void Start()
     {
@@ -31,6 +32,8 @@ public class scoreCounter : MonoBehaviour
 
         count = 0;
         setCountText();
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     // Update is called once per frame
@@ -47,8 +50,16 @@ public class scoreCounter : MonoBehaviour
             count = count + 1;
 
             //achievements
-            if (count == 50) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
-            if (count == 100 && LavidaLoca) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
+            if (count == 50)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
+                coinRewardScript.giveMediumReward();
+            }
+            if (count == 100 && LavidaLoca)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
+                coinRewardScript.giveHardReward();
+            }
             if (count == 150) PlayGamesManager.IncrementAchievement("CgkI1OXD-eYaEAIQDw", 5);
 
             setCountText();

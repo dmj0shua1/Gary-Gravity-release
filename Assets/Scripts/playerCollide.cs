@@ -32,6 +32,7 @@ public class playerCollide : MonoBehaviour
     rewardedAds rewardedAdsScript;
     uigoldUpdater uigoldScript;
     pauseScale pauseScript;
+    coinReward coinRewardScript;
     void Start()
     {
 
@@ -64,6 +65,8 @@ public class playerCollide : MonoBehaviour
         uigoldScript = GameObject.Find("txtuigold").GetComponent<uigoldUpdater>();
         pauseScript = GameObject.Find("onPause").GetComponent<pauseScale>();
         uigoldScript.updateGoldCoin();
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     // Update is called once per frame
@@ -168,6 +171,7 @@ public class playerCollide : MonoBehaviour
             if (healthbarSlider.value == 1)
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCQ");
+                coinRewardScript.giveMediumReward();
             }
 
             swipeScript.swipeCap = Convert.ToInt32(healthbarSlider.maxValue);
@@ -253,6 +257,7 @@ public class playerCollide : MonoBehaviour
         if (swipeScript.swipeCap < 1)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCw");
+            coinRewardScript.giveHardReward();
         }
 
     }

@@ -19,7 +19,7 @@ public class playerStats : MonoBehaviour
     public int baseUpgradePercentage;
     public Text txtUpgrade, txtNextUpgrade;
     GPGScript gpgScript;
-
+    coinReward coinRewardScript;
     // Use this for initialization
     void Start()
     {
@@ -57,6 +57,8 @@ public class playerStats : MonoBehaviour
 
         //load SP and skills
         loadSPSkills();
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     public void loadSPSkills()
@@ -118,8 +120,13 @@ public class playerStats : MonoBehaviour
                 upgradedView.SetActive(true);
                 txtUpgrade.text = "cooldown speed upgraded by " + (baseUpgradePercentage * PlayerPrefs.GetInt(skillName + "Lvl")).ToString() + "%";
                 txtNextUpgrade.text = "Next upgrade -> " + (baseUpgradePercentage * (PlayerPrefs.GetInt(skillName + "Lvl") + 1)).ToString() + "%";
-                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
+                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5)
+                {
+                    PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
+                    coinRewardScript.giveEasyReward();
+                }
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
+                coinRewardScript.giveEasyReward();
             }
 
         }

@@ -18,6 +18,7 @@ public class spawnProjectile : MonoBehaviour
     public int achBlindsight = 0;
     int achPowerTripperAttack = 0;
     achPowerTripper achPowerTripScript;
+    coinReward coinRewardScript;
     void Start()
     {
         rdmobj = GameObject.Find("RdmGen").GetComponent<RdmObjGen>();
@@ -26,6 +27,8 @@ public class spawnProjectile : MonoBehaviour
         cooldownAttackScript = GameObject.Find("cooldownAttack").GetComponent<cooldownAttack>();
         scoreCounter = GameObject.Find("subScoreCounter").GetComponent<scoreCounter>();
         achPowerTripScript = GameObject.Find("btnBoost").GetComponent<achPowerTripper>();
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     // Update is called once per frame
@@ -63,6 +66,7 @@ public class spawnProjectile : MonoBehaviour
         if (achBlindsight == 3)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDQ");
+            coinRewardScript.giveMediumReward();
         }
            
         if (achPowerTripperAttack < 1)

@@ -11,10 +11,11 @@ public class objectdestroyer : MonoBehaviour {
     cooldownShield cdShieldScript;
     int achDemolitionDerby = 0,achTv = 0;
     spawnProjectile spawnProjectileScript;
+    coinReward coinRewardScript;
 	void Start () {
         cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
         spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
-
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
 	}
 	
 	// Update is called once per frame
@@ -58,6 +59,7 @@ public class objectdestroyer : MonoBehaviour {
                     else if (achTv >= 4)
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+                        coinRewardScript.giveMediumReward();
                     }
                 }
             }
@@ -87,16 +89,20 @@ public class objectdestroyer : MonoBehaviour {
                     else if (achTv >= 4)
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+                        coinRewardScript.giveMediumReward();
                     }
                 }
 
                 if (achDemolitionDerby < 2)
                 {
                     achDemolitionDerby++;
+                    print("Derby++");
                 }
                 else if (achDemolitionDerby >= 2)
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
+                    print("Derby achieved");
+                    coinRewardScript.giveHardReward();
                 }
             }
           

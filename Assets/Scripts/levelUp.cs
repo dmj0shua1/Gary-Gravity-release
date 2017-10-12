@@ -17,6 +17,7 @@ public class levelUp : MonoBehaviour {
     Animator lvlUpAnim;
     levelUpAnimation lvlUpAnimationScript;
     public int swipeBaseValue = 20,swipeMultiplier = 1;
+    coinReward coinRewardScript;
 	// Use this for initialization
 	void Start () {
         scoreCounter = GameObject.Find("subScoreCounter").GetComponent<scoreCounter>();
@@ -47,7 +48,7 @@ public class levelUp : MonoBehaviour {
      //   PlayerPrefs.SetFloat("expEarned", lvl[lvl.Length - 1] - 1);
         checkReachedScore();
 
-       
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
        
 	}
 
@@ -95,7 +96,11 @@ public class levelUp : MonoBehaviour {
             PlayerPrefs.SetInt("skillPoints", PlayerPrefs.GetInt("skillPoints") + 1);
 
             //achievement
-            if (PlayerPrefs.GetInt("playerLevel") >= 15) PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEQ");
+            if (PlayerPrefs.GetInt("playerLevel") >= 15)
+            {
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEQ");
+                coinRewardScript.giveHardReward();
+            }
 
             txtlvlup.text = "LVL " + PlayerPrefs.GetInt("playerLevel").ToString() + "!";
             lvlUpAnim.SetBool("leveledUp", true);

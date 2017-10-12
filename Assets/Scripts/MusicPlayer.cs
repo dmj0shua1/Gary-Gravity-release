@@ -22,7 +22,9 @@ public class MusicPlayer : MonoBehaviour {
     }
 
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        if (!PlayerPrefs.HasKey("Music")) PlayerPrefs.SetInt("Music", 1);
         if (PlayerPrefs.GetInt("Music") == 1) { 
        introMusic = intro.GetComponent<AudioSource>();
        loopMusic = loop.GetComponent<AudioSource>();

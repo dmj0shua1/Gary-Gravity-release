@@ -29,6 +29,8 @@ public class cooldownBoost : MonoBehaviour
     scoreCounter scoreCounter;
     int achPowerTripperBoost = 0;
     achPowerTripper achPowerTripScript;
+    coinReward coinRewardScript;
+
     // Use this for initialization
     void Start()
     {
@@ -57,6 +59,8 @@ public class cooldownBoost : MonoBehaviour
 
         coroutine = WaitAndUpdate(1.0f);
         StartCoroutine(coroutine);
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     private IEnumerator WaitAndUpdate(float waitTime)
@@ -146,6 +150,7 @@ public class cooldownBoost : MonoBehaviour
         if (PlayerPrefs.GetInt("boost3timesAch") == 2)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAg");
+            coinRewardScript.giveHardReward();
         }
         else
         {
