@@ -168,10 +168,11 @@ public class playerCollide : MonoBehaviour
             // collectible capacity
 
             //achievement
-            if (healthbarSlider.value == 1)
+            if (healthbarSlider.value == 1 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQCQ"))
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCQ");
                 coinRewardScript.giveMediumReward();
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQCQ",1);
             }
 
             swipeScript.swipeCap = Convert.ToInt32(healthbarSlider.maxValue);
@@ -254,10 +255,11 @@ public class playerCollide : MonoBehaviour
 
     void achLastResort()
     {
-        if (swipeScript.swipeCap < 1)
+        if (swipeScript.swipeCap < 1 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQCw"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCw");
             coinRewardScript.giveHardReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQCw", 1);
         }
 
     }

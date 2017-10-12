@@ -147,10 +147,11 @@ public class cooldownBoost : MonoBehaviour
 
         //achievement
         scoreCounter.LavidaLoca = false;
-        if (PlayerPrefs.GetInt("boost3timesAch") == 2)
+        if (PlayerPrefs.GetInt("boost3timesAch") == 2 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAg"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAg");
             coinRewardScript.giveHardReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAg", 1);
         }
         else
         {

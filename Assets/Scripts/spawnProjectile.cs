@@ -63,10 +63,11 @@ public class spawnProjectile : MonoBehaviour
         scoreCounter.LavidaLoca = false;
         achBlindsight++;
 
-        if (achBlindsight == 3)
+        if (achBlindsight == 3 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQDQ"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDQ");
             coinRewardScript.giveMediumReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDQ", 1);
         }
            
         if (achPowerTripperAttack < 1)

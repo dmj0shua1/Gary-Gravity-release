@@ -50,15 +50,17 @@ public class scoreCounter : MonoBehaviour
             count = count + 1;
 
             //achievements
-            if (count == 50)
+            if (count == 50 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAw"))
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
                 coinRewardScript.giveMediumReward();
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAw", 1);
             }
-            if (count == 100 && LavidaLoca)
+            if (count == 100 && LavidaLoca && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQBQ"))
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
                 coinRewardScript.giveHardReward();
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQBQ", 1);
             }
             if (count == 150) PlayGamesManager.IncrementAchievement("CgkI1OXD-eYaEAIQDw", 5);
 

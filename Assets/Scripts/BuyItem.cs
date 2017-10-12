@@ -32,11 +32,12 @@ public class BuyItem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //achievement
-        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield"))
+        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield") && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQFA"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
             print("born ready!");
             coinRewardScript.giveHardReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQFA",1);
         }
 	}
 

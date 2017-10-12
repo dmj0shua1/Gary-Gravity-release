@@ -96,10 +96,11 @@ public class levelUp : MonoBehaviour {
             PlayerPrefs.SetInt("skillPoints", PlayerPrefs.GetInt("skillPoints") + 1);
 
             //achievement
-            if (PlayerPrefs.GetInt("playerLevel") >= 15)
+            if (PlayerPrefs.GetInt("playerLevel") >= 15 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEQ"))
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEQ");
                 coinRewardScript.giveHardReward();
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEQ", 1);
             }
 
             txtlvlup.text = "LVL " + PlayerPrefs.GetInt("playerLevel").ToString() + "!";
