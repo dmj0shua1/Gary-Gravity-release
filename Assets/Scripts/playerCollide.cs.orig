@@ -172,8 +172,11 @@ public class playerCollide : MonoBehaviour
             if (healthbarSlider.value == 1)
             {
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCQ");
+<<<<<<< HEAD
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCQ", 100f, true);
+=======
                 coinRewardScript.giveMediumReward();
+>>>>>>> b58c14e... partial coin reward
             }
 
             swipeScript.swipeCap = Convert.ToInt32(healthbarSlider.maxValue);
@@ -259,8 +262,11 @@ public class playerCollide : MonoBehaviour
         if (swipeScript.swipeCap < 1)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCw");
+<<<<<<< HEAD
             GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCw", 100f, true);
+=======
             coinRewardScript.giveHardReward();
+>>>>>>> b58c14e... partial coin reward
         }
 
     }

@@ -124,13 +124,18 @@ public class playerStats : MonoBehaviour
                 if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5)
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
+<<<<<<< HEAD
                     GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDg", 100f, true);
-                    coinRewardScript.giveEasyReward();
                 }
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAQ",100f,true);
         
+=======
+                    coinRewardScript.giveEasyReward();
+                }
+                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 coinRewardScript.giveEasyReward();
+>>>>>>> b58c14e... partial coin reward
             }
 
         }

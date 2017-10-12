@@ -13,6 +13,7 @@ public class objectdestroyer : MonoBehaviour
     cooldownShield cdShieldScript;
     int achDemolitionDerby = 0, achTv = 0;
     spawnProjectile spawnProjectileScript;
+<<<<<<< HEAD
     void Start()
     {
         cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
@@ -25,6 +26,19 @@ public class objectdestroyer : MonoBehaviour
     {
 
     }
+=======
+    coinReward coinRewardScript;
+	void Start () {
+        cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
+        spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+>>>>>>> b58c14e... partial coin reward
 
     void OnTriggerEnter(Collider obj)
     {
@@ -63,6 +77,7 @@ public class objectdestroyer : MonoBehaviour
                     else if (achTv >= 4)
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+                        coinRewardScript.giveMediumReward();
                     }
                 }
             }
@@ -70,13 +85,8 @@ public class objectdestroyer : MonoBehaviour
             {
                 GameObject objSfxDestByAttack = GameObject.Find("sfxDestroyedByAttack");
                 AudioSource asSfxDestByAttack = objSfxDestByAttack.GetComponent<AudioSource>();
-<<<<<<< HEAD
-                asSfxDestByAttack.Play();
-
-=======
                 if (PlayerPrefs.GetInt("Sfx") == 1) asSfxDestByAttack.Play();
               
->>>>>>> 81afea3... Sound options complete
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
 
                 Invoke("destroyExp", 0.5f);
@@ -97,18 +107,28 @@ public class objectdestroyer : MonoBehaviour
                     else if (achTv >= 4)
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+<<<<<<< HEAD
                         GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
+=======
+                        coinRewardScript.giveMediumReward();
+>>>>>>> b58c14e... partial coin reward
                     }
                 }
 
                 if (achDemolitionDerby < 2)
                 {
                     achDemolitionDerby++;
+                    print("Derby++");
                 }
                 else if (achDemolitionDerby >= 2)
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
+<<<<<<< HEAD
                     GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCg", 100f, true);
+=======
+                    print("Derby achieved");
+                    coinRewardScript.giveHardReward();
+>>>>>>> b58c14e... partial coin reward
                 }
             }
 

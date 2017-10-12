@@ -67,8 +67,11 @@ public class spawnProjectile : MonoBehaviour
         if (achBlindsight == 3)
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDQ");
+<<<<<<< HEAD
             GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDQ", 100f, true);
+=======
             coinRewardScript.giveMediumReward();
+>>>>>>> b58c14e... partial coin reward
         }
            
         if (achPowerTripperAttack < 1)
