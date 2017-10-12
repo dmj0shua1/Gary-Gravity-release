@@ -31,28 +31,27 @@ public class BuyItem : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         //achievement
-        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield"))
+        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield") && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQFA"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
 <<<<<<< HEAD
-        GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
             Social.ReportProgress("CgkI1OXDeYaEAIQFA", 100, (bool result) =>
             {
-                
-                print("born ready!");
 
+                print("born ready!");
+                coinRewardScript.giveHardReward();
             });
-    }
-    }
-        
 =======
             print("born ready!");
             coinRewardScript.giveHardReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQFA",1);
+>>>>>>> b3477d0... Demolition Derby
         }
-	}
->>>>>>> b58c14e... partial coin reward
+    }
 
     public void buyItem()
     {

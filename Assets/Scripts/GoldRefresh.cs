@@ -18,11 +18,12 @@ public class GoldRefresh : MonoBehaviour {
         goldText.text = PlayerPrefs.GetInt("PlayerGold").ToString();
 
         //achievement
-        if (PlayerPrefs.GetInt("PlayerGold") >= 1000)
+        if (PlayerPrefs.GetInt("PlayerGold") >= 1000 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEg"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEg");
             GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEg", 100f, true);
             coinRewardScript.giveEasyReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEg", 1);
         }
 	}
 }

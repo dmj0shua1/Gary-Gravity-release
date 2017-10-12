@@ -11,34 +11,25 @@ public class objectdestroyer : MonoBehaviour
     public Boolean isDestroyer = false;
     shieldToggle shieldToggleScript;
     cooldownShield cdShieldScript;
-    int achDemolitionDerby = 0, achTv = 0;
-    spawnProjectile spawnProjectileScript;
 <<<<<<< HEAD
-    void Start()
-    {
-        cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
-        spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    int achDemolitionDerby = 0, achTv = 0;
 =======
+    int achTv = 0;
+>>>>>>> b3477d0... Demolition Derby
+    spawnProjectile spawnProjectileScript;
     coinReward coinRewardScript;
+    achievementMonitor achMonitorScript;
 	void Start () {
         cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
         spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
         coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
+        achMonitorScript = GameObject.Find("achievementMonitor").GetComponent<achievementMonitor>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
->>>>>>> b58c14e... partial coin reward
 
     void OnTriggerEnter(Collider obj)
     {
@@ -74,10 +65,11 @@ public class objectdestroyer : MonoBehaviour
                     {
                         achTv++;
                     }
-                    else if (achTv >= 4)
+                    else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
                         coinRewardScript.giveMediumReward();
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA",1);
                     }
                 }
             }
@@ -104,17 +96,16 @@ public class objectdestroyer : MonoBehaviour
                     {
                         achTv++;
                     }
-                    else if (achTv >= 4)
+                    else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
-<<<<<<< HEAD
                         GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
-=======
                         coinRewardScript.giveMediumReward();
->>>>>>> b58c14e... partial coin reward
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA", 1);
                     }
                 }
 
+<<<<<<< HEAD
                 if (achDemolitionDerby < 2)
                 {
                     achDemolitionDerby++;
@@ -123,13 +114,13 @@ public class objectdestroyer : MonoBehaviour
                 else if (achDemolitionDerby >= 2)
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
-<<<<<<< HEAD
                     GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCg", 100f, true);
-=======
                     print("Derby achieved");
                     coinRewardScript.giveHardReward();
->>>>>>> b58c14e... partial coin reward
                 }
+=======
+                achMonitorScript.DemolitionDerby();
+>>>>>>> b3477d0... Demolition Derby
             }
 
 

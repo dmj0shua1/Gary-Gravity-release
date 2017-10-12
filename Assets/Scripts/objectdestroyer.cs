@@ -14,10 +14,12 @@ public class objectdestroyer : MonoBehaviour
     int achDemolitionDerby = 0, achTv = 0;
     spawnProjectile spawnProjectileScript;
     coinReward coinRewardScript;
+    achievementMonitor achMonitorScript;
 	void Start () {
         cdShieldScript = GameObject.Find("cooldownShield").GetComponent<cooldownShield>();
         spawnProjectileScript = GameObject.Find("btnAttack").GetComponent<spawnProjectile>();
         coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
+        achMonitorScript = GameObject.Find("achievementMonitor").GetComponent<achievementMonitor>();
 	}
 	
 	// Update is called once per frame
@@ -59,10 +61,11 @@ public class objectdestroyer : MonoBehaviour
                     {
                         achTv++;
                     }
-                    else if (achTv >= 4)
+                    else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
                         coinRewardScript.giveMediumReward();
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA",1);
                     }
                 }
             }
@@ -89,11 +92,12 @@ public class objectdestroyer : MonoBehaviour
                     {
                         achTv++;
                     }
-                    else if (achTv >= 4)
+                    else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
                         GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
                         coinRewardScript.giveMediumReward();
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA", 1);
                     }
                 }
 
@@ -109,6 +113,7 @@ public class objectdestroyer : MonoBehaviour
                     print("Derby achieved");
                     coinRewardScript.giveHardReward();
                 }
+                achMonitorScript.DemolitionDerby();
             }
 
 

@@ -121,21 +121,26 @@ public class playerStats : MonoBehaviour
                 upgradedView.SetActive(true);
                 txtUpgrade.text = "cooldown speed upgraded by " + (baseUpgradePercentage * PlayerPrefs.GetInt(skillName + "Lvl")).ToString() + "%";
                 txtNextUpgrade.text = "Next upgrade -> " + (baseUpgradePercentage * (PlayerPrefs.GetInt(skillName + "Lvl") + 1)).ToString() + "%";
-                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5)
+                if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQDg"))
                 {
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
-<<<<<<< HEAD
                     GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDg", 100f, true);
+                    coinRewardScript.giveEasyReward();
+                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDg", 1);
                 }
+                if (!PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAQ"))
+                {
+                    PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
+                    coinRewardScript.giveEasyReward();
+                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAQ", 1);
+                }
+<<<<<<< HEAD
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAQ",100f,true);
         
-=======
-                    coinRewardScript.giveEasyReward();
-                }
-                PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 coinRewardScript.giveEasyReward();
->>>>>>> b58c14e... partial coin reward
+=======
+>>>>>>> b3477d0... Demolition Derby
             }
 
         }

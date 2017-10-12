@@ -19,11 +19,12 @@ public class achPowerTripper : MonoBehaviour {
 
     public void powerTrip()
     {
-        if (achPowerTrip == 3)
+        if (achPowerTrip == 3 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEw"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEw");
             GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEw", 100f, true);
             coinRewardScript.giveHardReward();
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEw", 1);
         }
     }
 }
