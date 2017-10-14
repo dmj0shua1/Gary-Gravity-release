@@ -115,8 +115,7 @@ public class playerCollide : MonoBehaviour
             //game over sfx
             GameObject objSfxGameOver = GameObject.Find("sfxGameOver");
             AudioSource asSfxGameOver = objSfxGameOver.GetComponent<AudioSource>();
-
-            if (PlayerPrefs.GetInt("Sfx") == 1)  asSfxGameOver.Play();
+            asSfxGameOver.Play();
             BoxCollider colPlayer = GetComponent<BoxCollider>();
             colPlayer.enabled = false;
 

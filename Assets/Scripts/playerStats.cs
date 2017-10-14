@@ -132,7 +132,7 @@ public class playerStats : MonoBehaviour
         }
         else
         {
-            if (PlayerPrefs.GetInt("Sfx") == 1) insufficient.Play();
+            insufficient.Play();
         }
 
 

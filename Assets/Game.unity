@@ -914,7 +914,6 @@ GameObject:
   m_Component:
   - component: {fileID: 234}
   - component: {fileID: 337}
-  - component: {fileID: 623}
   m_Layer: 0
   m_Name: sfxSwipeFireman
   m_TagString: Untagged
@@ -2113,7 +2112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 264}
   - component: {fileID: 340}
-  - component: {fileID: 622}
   m_Layer: 0
   m_Name: sfxBuySound
   m_TagString: Untagged
@@ -2325,7 +2323,6 @@ GameObject:
   m_Component:
   - component: {fileID: 270}
   - component: {fileID: 342}
-  - component: {fileID: 621}
   m_Layer: 0
   m_Name: sfxBoostCharge
   m_TagString: Untagged
@@ -2574,7 +2571,6 @@ GameObject:
   - component: {fileID: 767}
   - component: {fileID: 769}
   - component: {fileID: 343}
-  - component: {fileID: 844}
   m_Layer: 5
   m_Name: btnShield
   m_TagString: Untagged
@@ -3136,7 +3132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 292}
   - component: {fileID: 345}
-  - component: {fileID: 843}
   m_Layer: 0
   m_Name: sfxSwipeShopper_girl
   m_TagString: Untagged
@@ -3533,7 +3528,6 @@ GameObject:
   - component: {fileID: 829}
   - component: {fileID: 831}
   - component: {fileID: 347}
-  - component: {fileID: 845}
   m_Layer: 5
   m_Name: btnAttack
   m_TagString: Untagged
@@ -11567,42 +11561,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
---- !u!114 &621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 133}
---- !u!114 &622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 121}
---- !u!114 &623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 53}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 53}
 --- !u!114 &624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15341,8 +15299,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 844}
-        m_MethodName: playSfx
+      - m_Target: {fileID: 343}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16741,8 +16699,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 621}
-        m_MethodName: playSfx
+      - m_Target: {fileID: 342}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17137,8 +17095,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 845}
-        m_MethodName: playSfx
+      - m_Target: {fileID: 347}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17538,42 +17496,6 @@ MonoBehaviour:
   height: 1280
   refreshRate: 0
   fullscreen: 1
---- !u!114 &843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 179}
---- !u!114 &844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 147}
---- !u!114 &845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cae662f66f081df49ae94bb39fe3cdd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objSoundSource: {fileID: 201}
 --- !u!1001 &213651389
 Prefab:
   m_ObjectHideFlags: 0

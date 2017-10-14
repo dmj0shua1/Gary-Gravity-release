@@ -97,8 +97,8 @@ public class SwipeMovement : MonoBehaviour {
            
             
         }
-
-        if (PlayerPrefs.GetInt("Sfx") == 1)  asSfxSwipe.Play();
+       
+        asSfxSwipe.Play();
 
     }
 
@@ -121,7 +121,7 @@ public class SwipeMovement : MonoBehaviour {
                 garySwiped = false;
            
         }
-        if (PlayerPrefs.GetInt("Sfx") == 1) asSfxSwipe.Play();
+        asSfxSwipe.Play();
     }
 
   
@@ -191,7 +191,7 @@ public class SwipeMovement : MonoBehaviour {
             else
             {
                 AudioSource insufficientSwipe = GameObject.Find("sfxInsufficientSwipe").GetComponent<AudioSource>();
-                if (PlayerPrefs.GetInt("Sfx") == 1)  insufficientSwipe.Play();
+                insufficientSwipe.Play();
             }
             if (character.name == "Ruth2")  Invoke("disableTornadoSprite", 0.5f);
            
