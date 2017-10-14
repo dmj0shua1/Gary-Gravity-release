@@ -25,17 +25,19 @@ public class MusicPlayer : MonoBehaviour {
     void Start()
     {
         if (!PlayerPrefs.HasKey("Music")) PlayerPrefs.SetInt("Music", 1);
-        if (PlayerPrefs.GetInt("Music") == 1) { 
-       introMusic = intro.GetComponent<AudioSource>();
-       loopMusic = loop.GetComponent<AudioSource>();
-        if (!loopMusic.isPlaying)
+        if (PlayerPrefs.GetInt("Music") == 1)
         {
-            introMusic.Play();
-            loopMusic.PlayDelayed(12);
-         
-        }
+            introMusic = intro.GetComponent<AudioSource>();
+            loopMusic = loop.GetComponent<AudioSource>();
+            if (!loopMusic.isPlaying)
+            {
+                introMusic.Play();
+                loopMusic.PlayDelayed(12);
 
-	}
+            }
+
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

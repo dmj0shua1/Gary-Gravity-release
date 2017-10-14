@@ -31,19 +31,21 @@ public class BuyItem : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         //achievement
         if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
-        GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQFA", 100f, true);
             Social.ReportProgress("CgkI1OXDeYaEAIQFA", 100, (bool result) =>
             {
-                
-            print("born ready!");
-            coinRewardScript.giveHardReward();
+
+                print("born ready!");
+                coinRewardScript.giveHardReward();
+            });
         }
-	}
+    }
 
     public void buyItem()
     {
