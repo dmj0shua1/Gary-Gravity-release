@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class achievementMonitor : MonoBehaviour {
     coinReward coinRewardScript;
@@ -26,6 +27,7 @@ public class achievementMonitor : MonoBehaviour {
         else if (achDemolitionDerby >= 2 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQCg"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQCg", 100f, true);
             print("Derby achieved");
             coinRewardScript.giveHardReward();
             PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQCg", 1);

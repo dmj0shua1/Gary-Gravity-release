@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SocialPlatforms;
 
 public class cooldownBoost : MonoBehaviour
 {
@@ -150,6 +151,7 @@ public class cooldownBoost : MonoBehaviour
         if (PlayerPrefs.GetInt("boost3timesAch") == 2 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAg"))
         {
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAg");
+            GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAg", 100f, true);
             coinRewardScript.giveHardReward();
             PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAg", 1);
         }

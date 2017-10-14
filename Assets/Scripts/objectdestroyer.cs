@@ -64,6 +64,7 @@ public class objectdestroyer : MonoBehaviour
                     else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
+                        GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
                         coinRewardScript.giveMediumReward();
                         PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA",1);
                     }
