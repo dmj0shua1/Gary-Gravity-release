@@ -20,4 +20,4 @@ public class SfxPlayer : MonoBehaviour {
          asSfx.Play();
         }
     }
-}
+
