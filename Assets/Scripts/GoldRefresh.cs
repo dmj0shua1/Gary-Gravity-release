@@ -19,9 +19,10 @@ public class GoldRefresh : MonoBehaviour {
         //achievement
         if (PlayerPrefs.GetInt("PlayerGold") >= 1000 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEg"))
         {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEg", 1);
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEg");
             coinRewardScript.giveEasyReward();
-            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEg", 1);
+          
         }
 	}
 }

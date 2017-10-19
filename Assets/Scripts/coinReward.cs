@@ -16,6 +16,7 @@ public class coinReward : MonoBehaviour {
     Text txtCoinReward;
     [SerializeField]
     AudioSource sfxCoin;
+    uigoldUpdater uigoldScript;
 	// Use this for initialization
 	void Start () {
 		
@@ -32,6 +33,7 @@ public class coinReward : MonoBehaviour {
         txtCoinReward.text = "You received "+easyAmount.ToString() +" coins!";
         animCoinReward.SetTrigger(triggerName);
         if (PlayerPrefs.GetInt("Sfx") == 1) sfxCoin.Play();
+        uigoldScript.updateGoldCoin();
 
     }
 
@@ -41,6 +43,7 @@ public class coinReward : MonoBehaviour {
         txtCoinReward.text = "You received " + mediumAmount.ToString() + " coins!";
         animCoinReward.SetTrigger(triggerName);
         if (PlayerPrefs.GetInt("Sfx") == 1) sfxCoin.Play();
+        uigoldScript.updateGoldCoin();
     }
 
     public void giveHardReward()
@@ -49,5 +52,6 @@ public class coinReward : MonoBehaviour {
         txtCoinReward.text = "You received " + hardAmount.ToString() + " coins!";
         animCoinReward.SetTrigger(triggerName);
         if (PlayerPrefs.GetInt("Sfx") == 1) sfxCoin.Play();
+        uigoldScript.updateGoldCoin();
     }
 }

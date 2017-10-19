@@ -20,7 +20,7 @@ public class PrintTimeShield : MonoBehaviour
     public double itmTime;
     long temp;
     private IEnumerator coroutine;
-
+    coinReward coinRewardScript;
 
     void Start()
     {
@@ -34,6 +34,8 @@ public class PrintTimeShield : MonoBehaviour
 
         coroutine = WaitAndUpdate(1.0f);
         StartCoroutine(coroutine);
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     private IEnumerator WaitAndUpdate(float waitTime)
@@ -153,8 +155,16 @@ public class PrintTimeShield : MonoBehaviour
 
 
         PlayerPrefs.SetString("endTimeshield", result.ToString());
-
         refreshTime();
+        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield") && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQFA"))
+        {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQFA", 1);
+            PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
+            print("born ready!");
+            coinRewardScript.giveHardReward();
+            
+        }
+        
     }
 
 

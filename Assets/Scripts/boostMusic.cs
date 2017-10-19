@@ -36,13 +36,13 @@ public class boostMusic : MonoBehaviour {
         asMusic.Stop();
 
         asSfx = objSoundSource.GetComponent<AudioSource>();
-        asSfx.Play();
+        if (PlayerPrefs.GetInt("Music") == 1) asSfx.Play();
     }
 
     public void stopBoostMusic()
     {
      
         asSfx.Stop();
-        asMusic.Play();
+        if (PlayerPrefs.GetInt("Music") == 1) asMusic.Play();
     }
 }

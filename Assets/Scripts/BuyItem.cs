@@ -15,7 +15,7 @@ public class BuyItem : MonoBehaviour {
     public GameObject printTime,buyNotif;
     PlayerGold pGold;
     Text timerBoost, timerAttack, timerShield;
-    coinReward coinRewardScript;
+
 
 
 
@@ -26,19 +26,13 @@ public class BuyItem : MonoBehaviour {
         timerAttack = GameObject.Find("timerAttack").GetComponent<Text>();
         timerShield = GameObject.Find("timerShield").GetComponent<Text>();
       //  gameObject.SendMessage("itemTime", 69);
-        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
+   
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //achievement
-        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield") && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQFA"))
-        {
-            PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
-            print("born ready!");
-            coinRewardScript.giveHardReward();
-            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQFA",1);
-        }
+     
 	}
 
     public void buyItem()

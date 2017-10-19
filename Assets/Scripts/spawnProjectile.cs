@@ -65,9 +65,10 @@ public class spawnProjectile : MonoBehaviour
 
         if (achBlindsight == 3 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQDQ"))
         {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDQ", 1);
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDQ");
             coinRewardScript.giveMediumReward();
-            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDQ", 1);
+            
         }
            
         if (achPowerTripperAttack < 1)

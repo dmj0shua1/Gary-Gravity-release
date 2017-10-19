@@ -25,10 +25,11 @@ public class achievementMonitor : MonoBehaviour {
         }
         else if (achDemolitionDerby >= 2 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQCg"))
         {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQCg", 1);
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQCg");
             print("Derby achieved");
             coinRewardScript.giveHardReward();
-            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQCg", 1);
+            
         }
     }
 }
