@@ -16,17 +16,17 @@ public class PrintTimeBoost : MonoBehaviour
     public Text timerBoost;
     public string itemName = "Boost";
     TimeSpan timeLeftBoost;
-    DateTime endTime,curTime;
+    DateTime endTime, curTime;
     public double itmTime;
     long temp;
     private IEnumerator coroutine;
- 
+    coinReward coinRewardScript;
 
     void Start()
     {
         maincam = Camera.main;
         dateCheckerScript = maincam.gameObject.GetComponent<DateChecker>();
-        
+
         //Store the current time when it starts
         currentDate = System.DateTime.Now;
 
@@ -34,6 +34,8 @@ public class PrintTimeBoost : MonoBehaviour
 
         coroutine = WaitAndUpdate(1.0f);
         StartCoroutine(coroutine);
+
+        coinRewardScript = GameObject.Find("pnlCoinReward").GetComponent<coinReward>();
     }
 
     private IEnumerator WaitAndUpdate(float waitTime)
@@ -76,7 +78,7 @@ public class PrintTimeBoost : MonoBehaviour
                 print("");
             }
 
-       
+
         }
 
     }
@@ -91,18 +93,18 @@ public class PrintTimeBoost : MonoBehaviour
         else
         {
             PlayerPrefs.SetString("sysString", System.DateTime.Now.ToBinary().ToString());
-           
+
         }
-      
+
         //Convert the old time from binary to a DataTime variable
-         oldDate = DateTime.FromBinary(temp);
+        oldDate = DateTime.FromBinary(temp);
         print("oldDate: " + oldDate);
 
-        
+
 
         //Use the Subtract method and store the result as a timespan variable
         TimeSpan difference = currentDate.Subtract(oldDate);
-    //    print("Difference: " + difference);
+        //    print("Difference: " + difference);
         //check if timeleft is present
         if (PlayerPrefs.HasKey("timeLeft"))
         {
@@ -117,7 +119,7 @@ public class PrintTimeBoost : MonoBehaviour
         {
             string dT = PlayerPrefs.GetString("endTimeboost");
             endTime = Convert.ToDateTime(dT);
-            print("ENDTIME: "+endTime);
+            print("ENDTIME: " + endTime);
             expirationChecker();
         }
     }
@@ -131,15 +133,15 @@ public class PrintTimeBoost : MonoBehaviour
 
     void Update()
     {
-       
+
     }
     void OnApplicationQuit()
     {
         //Save the current system time as a string in the player prefs class
         PlayerPrefs.SetString("sysString", System.DateTime.Now.ToBinary().ToString());
-       
-     //   print("Saving this date to prefs: " + System.DateTime.Now);
-        
+
+        //   print("Saving this date to prefs: " + System.DateTime.Now);
+
     }
 
     public void iprintna()
@@ -151,14 +153,22 @@ public class PrintTimeBoost : MonoBehaviour
         System.TimeSpan duration = new System.TimeSpan(0, 0, Convert.ToInt32(itmTime), 0);
         System.DateTime result = today.Add(duration);
 
-        
-      PlayerPrefs.SetString("endTimeboost", result.ToString());
-      
-      refreshTime();
+
+        PlayerPrefs.SetString("endTimeboost", result.ToString());
+        refreshTime();
+        if (PlayerPrefs.HasKey("endTimeboost") && PlayerPrefs.HasKey("endTimeattack") && PlayerPrefs.HasKey("endTimeshield") && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQFA"))
+        {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQFA", 1);
+            PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQFA");
+            print("born ready!");
+            coinRewardScript.giveHardReward();
+            
         }
+       
+    }
 
 
 
-} 
+}
 
 

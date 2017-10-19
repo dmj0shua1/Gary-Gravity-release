@@ -53,17 +53,19 @@ public class scoreCounter : MonoBehaviour
             //achievements
             if (count == 50 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAw"))
             {
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAw", 1);
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAw");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAw", 100f, true);
                 coinRewardScript.giveMediumReward();
-                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAw", 1);
+              
             }
             if (count == 100 && LavidaLoca && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQBQ"))
             {
+                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQBQ", 1);
                 PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQBQ");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQBQ", 100f, true);
                 coinRewardScript.giveHardReward();
-                PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQBQ", 1);
+              
             }
             if (count == 150) PlayGamesManager.IncrementAchievement("CgkI1OXD-eYaEAIQDw", 5);
 

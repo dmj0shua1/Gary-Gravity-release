@@ -10,7 +10,8 @@ public class RdmObjGen : MonoBehaviour
     public Transform[] SpawnPoints;
     public float spawnTimeObs, spawnTimeCol, spawnTimeCoins;
     //public GameObject Obstacles;
-    public GameObject[] Obstacles, Collectibles;
+    public GameObject[] Collectibles;
+    public ObjectPooler[] Obstacles;
     public bool stopBoostNow, stopShieldNow, stopAttackNow;
     // Use this for initialization
     private IEnumerator coroutine;
@@ -94,7 +95,11 @@ public class RdmObjGen : MonoBehaviour
         }
         prevIndex = curIndex;
 
-        Instantiate(Obstacles[curObs], SpawnPoints[curIndex].position, SpawnPoints[curIndex].rotation);
+      //  Instantiate(Obstacles[curObs], SpawnPoints[curIndex].position, SpawnPoints[curIndex].rotation);
+        GameObject objPooled = Obstacles[curObs].GetPooledObject();
+        objPooled.transform.position = SpawnPoints[curIndex].position;
+        objPooled.transform.rotation = SpawnPoints[curIndex].rotation;
+        objPooled.SetActive(true);
         CancelInvoke("SpawnObstacles");
         //    spawnTimeObs = Random.Range(minSpawnTimeObs, maxSpawnTimeObs);
 
@@ -118,6 +123,9 @@ public class RdmObjGen : MonoBehaviour
         prevIndex1 = curIndex1;
 
         Instantiate(Collectibles[curCol], SpawnPoints[curIndex1].position, SpawnPoints[curIndex1].rotation);
+      /*  Collectibles[curCol].transform.position = SpawnPoints[curIndex1].position;
+        Collectibles[curCol].transform.rotation = SpawnPoints[curIndex1].rotation;
+        Collectibles[curCol].SetActive(true);*/
         CancelInvoke("SpawnCollectibles");
 
         //      spawnTimeCol = Random.Range(minSpawnTimeCol, maxSpawnTimeCol);
@@ -131,7 +139,10 @@ public class RdmObjGen : MonoBehaviour
             curIndex2 = Random.Range(0, SpawnPoints.Length);
         }
         prevIndex2 = curIndex2;
-        Instantiate(objCoin, SpawnPoints[curIndex2].position, SpawnPoints[curIndex2].rotation);
+       // Instantiate(objCoin, SpawnPoints[curIndex2].position, SpawnPoints[curIndex2].rotation);
+        objCoin.transform.position = SpawnPoints[curIndex2].position;
+        objCoin.transform.rotation = SpawnPoints[curIndex2].rotation;
+        objCoin.SetActive(true);
         CancelInvoke("SpawnCoins");
     }
 

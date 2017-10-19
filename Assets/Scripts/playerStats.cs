@@ -123,18 +123,18 @@ public class playerStats : MonoBehaviour
                 txtNextUpgrade.text = "Next upgrade -> " + (baseUpgradePercentage * (PlayerPrefs.GetInt(skillName + "Lvl") + 1)).ToString() + "%";
                 if (PlayerPrefs.GetInt(skillName + "Lvl") >= 5 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQDg"))
                 {
+                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDg", 1);
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQDg");
                     GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQDg", 100f, true);
-                    coinRewardScript.giveEasyReward();
-                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQDg", 1);
+                    coinRewardScript.giveEasyReward();                  
                 }
                 if (!PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAQ"))
                 {
+                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAQ", 1);
                     PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAQ");
                 GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAQ",100f,true);
         
                     coinRewardScript.giveEasyReward();
-                    PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAQ", 1);
                 }
             }
 

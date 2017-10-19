@@ -150,10 +150,11 @@ public class cooldownBoost : MonoBehaviour
         scoreCounter.LavidaLoca = false;
         if (PlayerPrefs.GetInt("boost3timesAch") == 2 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQAg"))
         {
+            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAg", 1);
             PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQAg");
             GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQAg", 100f, true);
             coinRewardScript.giveHardReward();
-            PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQAg", 1);
+         
         }
         else
         {
@@ -229,7 +230,7 @@ public class cooldownBoost : MonoBehaviour
 
         foreach (GameObject ob in obs)
         {
-            Destroy(ob);
+            ob.SetActive(false);
             if (PlayerPrefs.GetInt("Sfx") == 1) sfxExplosion.Play();
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
         }

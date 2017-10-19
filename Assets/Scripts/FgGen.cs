@@ -6,8 +6,8 @@ public class FgGen : MonoBehaviour {
 
 	public Transform SpawnPoints;
 	public float spawnTime = 1.5f;
-
-	public GameObject bdForeground;
+    public ObjectPooler bdForeground;
+//	public GameObject bdForeground;
  	//public GameObject[] Obstacles;
 
 	// Use this for initialization
@@ -21,6 +21,10 @@ public class FgGen : MonoBehaviour {
 	}
 
 	void SpawnForeground() {
-		Instantiate(bdForeground, SpawnPoints.position, SpawnPoints.rotation);
+		//Instantiate(bdForeground, SpawnPoints.position, SpawnPoints.rotation);
+        GameObject objectPooled = bdForeground.GetPooledObject();
+        objectPooled.transform.position = SpawnPoints.transform.position;
+        objectPooled.transform.rotation = SpawnPoints.transform.rotation;
+        objectPooled.SetActive(true);
 	}
 }

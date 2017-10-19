@@ -33,10 +33,11 @@ public class objectdestroyer : MonoBehaviour
 
         if (isDestroyer && (obj.tag == "Foreground" || obj.tag == "Obstacles"))
         {
-            Destroy(obj.gameObject);
+            obj.gameObject.SetActive(false);
         }
         else if (obj.tag == "Obstacles")
         {
+
             if (gameObject.name == "playerShield")
             {
                 try
@@ -46,7 +47,7 @@ public class objectdestroyer : MonoBehaviour
                 /*if (SceneManager.GetActiveScene().name == "Game") */
                 shieldToggleScript = btnShieldObj.GetComponent<shieldToggle>();
                 shieldToggleScript.deactivateShield();
-                Destroy(obj.gameObject);
+                obj.gameObject.SetActive(false);
                 GameObject objSfxDestByShield = GameObject.Find("sfxDestroyedByShield");
                 AudioSource asSfxDestByShield = objSfxDestByShield.GetComponent<AudioSource>();
                 if (PlayerPrefs.GetInt("Sfx") == 1) asSfxDestByShield.Play();
@@ -63,10 +64,11 @@ public class objectdestroyer : MonoBehaviour
                     }
                     else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA", 1);
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
                         GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
                         coinRewardScript.giveMediumReward();
-                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA",1);
+                   
                     }
                 }
             }
@@ -80,7 +82,7 @@ public class objectdestroyer : MonoBehaviour
 
                 Invoke("destroyExp", 0.5f);
                 Destroy(gameObject);
-                Destroy(obj.gameObject);
+                obj.gameObject.SetActive(false);
 
                 //achievement
 
@@ -95,10 +97,11 @@ public class objectdestroyer : MonoBehaviour
                     }
                     else if (achTv >= 4 && !PlayerPrefs.HasKey("CgkI1OXD-eYaEAIQEA"))
                     {
+                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA", 1);
                         PlayGamesManager.UnlockAchievement("CgkI1OXD-eYaEAIQEA");
                         GKAchievementReporter.ReportAchievement("CgkI1OXDeYaEAIQEA", 100f, true);
                         coinRewardScript.giveMediumReward();
-                        PlayerPrefs.SetInt("CgkI1OXD-eYaEAIQEA", 1);
+                       
                     }
                 }
 
@@ -116,8 +119,9 @@ public class objectdestroyer : MonoBehaviour
                 }
                 achMonitorScript.DemolitionDerby();
             }
+          
 
-
+           
         }
     }
 
