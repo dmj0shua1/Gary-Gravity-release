@@ -15984,10 +15984,10 @@ MonoBehaviour:
   - {fileID: 1649553802}
   - {fileID: 1264499704}
   - {fileID: 1388064433}
+  objCoinPool: {fileID: 232429216}
   stopBoostNow: 1
   stopShieldNow: 1
   stopAttackNow: 1
-  objCoin: {fileID: 232429214}
 --- !u!114 &791
 MonoBehaviour:
   m_ObjectHideFlags: 0
