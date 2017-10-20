@@ -5,11 +5,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 456946}
-  - 33: {fileID: 3368064}
-  - 23: {fileID: 2331068}
+  - component: {fileID: 456946}
+  - component: {fileID: 3368064}
+  - component: {fileID: 2331068}
   m_Layer: 0
   m_Name: Wheels
   m_TagString: Untagged
@@ -22,10 +22,10 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 485542}
-  - 114: {fileID: 11489386}
+  - component: {fileID: 485542}
+  - component: {fileID: 11489386}
   m_Layer: 0
   m_Name: car model
   m_TagString: Obstacles
@@ -38,11 +38,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 411436}
-  - 33: {fileID: 3359728}
-  - 23: {fileID: 2347212}
+  - component: {fileID: 411436}
+  - component: {fileID: 3359728}
+  - component: {fileID: 2347212}
   m_Layer: 0
   m_Name: Car case
   m_TagString: Untagged
@@ -55,15 +55,15 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 450630}
-  - 65: {fileID: 6560648}
-  - 114: {fileID: 11467224}
+  - component: {fileID: 450630}
+  - component: {fileID: 6560648}
+  - component: {fileID: 11467224}
   m_Layer: 0
   m_Name: car
   m_TagString: Obstacles
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -76,10 +76,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.20815325, y: 1.38138, z: 0.00000018560061}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 485542}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &450630
 Transform:
   m_ObjectHideFlags: 1
@@ -89,11 +89,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0.7071812, z: 0, w: 0.70703244}
   m_LocalPosition: {x: 361.43, y: 89.203, z: 163.38}
   m_LocalScale: {x: 0.073060974, y: 0.07306098, z: 0.07306098}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.0121, z: 0}
   m_Children:
   - {fileID: 485542}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 90.0121, z: 0}
 --- !u!4 &456946
 Transform:
   m_ObjectHideFlags: 1
@@ -103,10 +103,10 @@ Transform:
   m_LocalRotation: {x: 0.70706517, y: -0.70673484, z: 0.0125198765, w: -0.02068853}
   m_LocalPosition: {x: 0.4872655, y: -1.0188988, z: 7.465675}
   m_LocalScale: {x: 1.0980577, y: 0.91948587, z: 1.0976954}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 485542}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &485542
 Transform:
   m_ObjectHideFlags: 1
@@ -116,12 +116,12 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.7, y: 0.5, z: 0.3}
   m_LocalScale: {x: 0.84585786, y: 0.84585786, z: 0.84585786}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 411436}
   - {fileID: 456946}
   m_Father: {fileID: 450630}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2331068
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -136,7 +136,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 1c7cad64e00e4ce4297770f338295485, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -144,12 +146,13 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &2347212
 MeshRenderer:
@@ -165,7 +168,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 7695136591a3a174788592a23338becc, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -173,12 +178,13 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &3359728
 MeshFilter:
