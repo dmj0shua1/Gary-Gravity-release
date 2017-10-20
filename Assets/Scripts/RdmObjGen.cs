@@ -12,11 +12,11 @@ public class RdmObjGen : MonoBehaviour
     //public GameObject Obstacles;
     public GameObject[] Collectibles;
     public ObjectPooler[] Obstacles;
+    public ObjectPooler objCoinPool;
     public bool stopBoostNow, stopShieldNow, stopAttackNow;
     // Use this for initialization
     private IEnumerator coroutine;
     GameObject playerObj;
-    public GameObject objCoin;
     int prevCol, curCol, prevObs, curObs, prevIndex, curIndex, prevIndex1, curIndex1, prevIndex2, curIndex2;
     void Start()
     {
@@ -140,9 +140,10 @@ public class RdmObjGen : MonoBehaviour
         }
         prevIndex2 = curIndex2;
        // Instantiate(objCoin, SpawnPoints[curIndex2].position, SpawnPoints[curIndex2].rotation);
-        objCoin.transform.position = SpawnPoints[curIndex2].position;
-        objCoin.transform.rotation = SpawnPoints[curIndex2].rotation;
-        objCoin.SetActive(true);
+        GameObject objPooled = objCoinPool.GetPooledObject();
+        objPooled.transform.position = SpawnPoints[curIndex2].position;
+        objPooled.transform.rotation = SpawnPoints[curIndex2].rotation;
+        objPooled.SetActive(true);
         CancelInvoke("SpawnCoins");
     }
 
